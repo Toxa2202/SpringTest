@@ -10,30 +10,34 @@
 
     <context:property-placeholder location="musicPlayer.properties"/>
 
-    <bean id="rockMusicBean"
-          class="ru.alishev.springcourse.saint.anthony.RockMusic">
+    <bean id="rockMusicBean" scope="prototype"
+            class="ru.alishev.springcourse.saint.anthony.RockMusic"
+            init-method="doMyInit"
+            destroy-method="doMyDestroy">
     </bean>
 
-    <bean id="classicalMusicBean"
-          class="ru.alishev.springcourse.saint.anthony.ClassicalMusic">
+    <bean id="classicalMusicBean" scope="prototype"
+            class="ru.alishev.springcourse.saint.anthony.ClassicalMusic"
+            init-method="doMyInit"
+            destroy-method="doMyDestroy">
     </bean>
 
     <bean id="danceMusicBean"
           class="ru.alishev.springcourse.saint.anthony.DanceMusic">
     </bean>
 
-    <bean id="musicPlayer"
-          class="ru.alishev.springcourse.saint.anthony.MusicPlayer" scope="prototype">
-        <property name="musicList">
-            <list>
-                <ref bean="classicalMusicBean"/>
-                <ref bean="rockMusicBean"/>
-                <ref bean="danceMusicBean"/>
-            </list>
-        </property>
+<!--    <bean id="musicPlayer"-->
+<!--          class="ru.alishev.springcourse.saint.anthony.MusicPlayer" scope="prototype">-->
+<!--        <property name="musicList">-->
+<!--            <list>-->
+<!--                <ref bean="classicalMusicBean"/>-->
+<!--                <ref bean="rockMusicBean"/>-->
+<!--                <ref bean="danceMusicBean"/>-->
+<!--            </list>-->
+<!--        </property>-->
 
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>
