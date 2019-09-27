@@ -23,7 +23,7 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="ru.alishev.springcourse.saint.anthony.MusicPlayer">
+          class="ru.alishev.springcourse.saint.anthony.MusicPlayer" scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean="classicalMusicBean"/>
