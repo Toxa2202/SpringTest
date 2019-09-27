@@ -16,10 +16,11 @@
             destroy-method="doMyDestroy">
     </bean>
 
-    <bean id="classicalMusicBean" scope="prototype"
+    <bean id="classicalMusicBean"
             class="ru.alishev.springcourse.saint.anthony.ClassicalMusic"
             init-method="doMyInit"
-            destroy-method="doMyDestroy">
+            destroy-method="doMyDestroy"
+            factory-method="getClassicalMusic">
     </bean>
 
     <bean id="danceMusicBean"
