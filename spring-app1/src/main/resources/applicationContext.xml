@@ -8,37 +8,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
 
-    <context:property-placeholder location="musicPlayer.properties"/>
-
-    <bean id="rockMusicBean" scope="prototype"
-            class="ru.alishev.springcourse.saint.anthony.RockMusic"
-            init-method="doMyInit"
-            destroy-method="doMyDestroy">
-    </bean>
-
-    <bean id="classicalMusicBean"
-            class="ru.alishev.springcourse.saint.anthony.ClassicalMusic"
-            init-method="doMyInit"
-            destroy-method="doMyDestroy"
-            factory-method="getClassicalMusic">
-    </bean>
-
-    <bean id="danceMusicBean"
-          class="ru.alishev.springcourse.saint.anthony.DanceMusic">
-    </bean>
-
-<!--    <bean id="musicPlayer"-->
-<!--          class="ru.alishev.springcourse.saint.anthony.MusicPlayer" scope="prototype">-->
-<!--        <property name="musicList">-->
-<!--            <list>-->
-<!--                <ref bean="classicalMusicBean"/>-->
-<!--                <ref bean="rockMusicBean"/>-->
-<!--                <ref bean="danceMusicBean"/>-->
-<!--            </list>-->
-<!--        </property>-->
-
-<!--        <property name="name" value="${musicPlayer.name}"/>-->
-<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
-<!--    </bean>-->
+    <context:component-scan base-package="ru.alishev.springcourse.saint.anthony"/>
 
 </beans>

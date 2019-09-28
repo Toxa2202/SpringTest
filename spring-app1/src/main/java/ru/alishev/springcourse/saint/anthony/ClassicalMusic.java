@@ -1,19 +1,9 @@
 package ru.alishev.springcourse.saint.anthony;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ClassicalMusic implements Music {
-    private ClassicalMusic() {}
-
-    public static ClassicalMusic getClassicalMusic() {
-        return new ClassicalMusic();
-    }
-
-    public void doMyInit() {
-        System.out.println("My initialization");
-    }
-
-    public void doMyDestroy() {
-        System.out.println("My destruction");
-    }
 
     @Override
     public String getSong() {

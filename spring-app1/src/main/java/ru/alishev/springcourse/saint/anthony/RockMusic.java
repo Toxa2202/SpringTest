@@ -1,16 +1,12 @@
 package ru.alishev.springcourse.saint.anthony;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RockMusic implements Music {
+
     @Override
     public String getSong() {
         return "Wind cries Mary";
-    }
-
-    private void doMyInit() {
-        System.out.println("rock Initialization");
-    }
-
-    private void doMyDestroy() {
-        System.out.println("rock Destruction");
     }
 }
