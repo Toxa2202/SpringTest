@@ -9,10 +9,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.annotation.PostConstruct;
-import java.util.Comparator;
 
 @SpringBootApplication
-public class SprindatajpaApplication {
+public class SpringDataJpaApplication {
 
     @Autowired
     private BrandRepository brandRepository;
@@ -22,10 +21,11 @@ public class SprindatajpaApplication {
 
     // MAIN
     public static void main(String[] args) {
-        SpringApplication.run(SprindatajpaApplication.class, args);
+        SpringApplication.run(SpringDataJpaApplication.class, args);
 
     }
 
+    // Start actions when bean is calling (like init-method from xml)
     @PostConstruct
     public void postCons() {
         Brand brand1 = new Brand();

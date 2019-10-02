@@ -4,16 +4,16 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
+// таблиця Машина
 @Entity
 public class Car extends IdHolder{
 
+    // Багато машин - один бренд
     @ManyToOne(cascade = CascadeType.ALL)
     private Brand brand;
 
     private  String modelName;
-
     private Integer power;
-
     private Long price;
 
     public Brand getBrand() {

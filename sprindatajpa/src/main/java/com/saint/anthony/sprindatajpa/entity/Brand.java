@@ -5,11 +5,13 @@ import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
+// таблиця Бренд
 @Entity
 public class Brand extends IdHolder{
 
     private String name;
 
+    // Один бренд - багато автомобілів, агрегується по бренду
     @OneToMany(mappedBy = "brand")
     private List<Car> cars = new ArrayList<>();
 
